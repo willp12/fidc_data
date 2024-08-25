@@ -11,6 +11,7 @@ if selected_company:
     df_selected_company = df_final[df_final['DENOM_SOCIAL'] == selected_company]
     st.bar_chart(df_selected_company[['DT_COMPTC', 'DENOM_SOCIAL', 'TAB_VII_A1_2_VL_DIRCRED_RISCO']],
              x='DT_COMPTC',
-             y='TAB_VII_A1_2_VL_DIRCRED_RISCO')
+             y='TAB_VII_A1_2_VL_DIRCRED_RISCO',
+             column_config={"TAB_VII_A1_2_VL_DIRCRED_RISCO": st.column_config.NumberColumn(format="%,.2f")})
 
 st.data_editor(df_final)
